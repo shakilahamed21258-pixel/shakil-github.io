@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakil Ahamed - Portfolio</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --accent: #0d9488;
+            --dark: #0f172a;
+            --slate: #475569;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.3);
+        }
+
+        .profile-img-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #0d9488);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 48px;
+            color: white;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        header .subtitle {
+            font-size: 1.25rem;
+            color: #93c5fd;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .contact-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #f1f5f9;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .pill:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 35px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 35px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 12px;
+        }
+
+        .section-title i {
+            background: #eff6ff;
+            color: var(--primary-light);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .profile-text {
+            color: var(--slate);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Education Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 2px;
+            background: #e2e8f0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary-light);
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .timeline-subtitle {
+            color: var(--slate);
+            font-size: 0.95rem;
+            margin: 2px 0 6px;
+        }
+
+        .timeline-badge {
+            display: inline-block;
+            background: #f1f5f9;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 3px 10px;
+            border-radius: 6px;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .skill-card h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            color: var(--slate);
+            font-size: 0.95rem;
+        }
+
+        .skill-card ul li {
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .skill-card ul li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Details Grid */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            background: #f8fafc;
+            padding: 14px 18px;
+            border-radius: 10px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .detail-label {
+            font-size: 0.85rem;
+            color: var(--slate);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-value {
+            font-size: 1rem;
+            color: var(--dark);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--slate);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 50px 0 40px;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .card {
+                padding: 22px;
+            }
+            .contact-pills {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="profile-img-placeholder">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <h1>Shakil Ahamed</h1>
+            <div class="subtitle">Auditor Candidate | B.Ed., University of Dhaka</div>
+            
+            <div class="contact-pills">
+                <a href="mailto:shakilahamed21258@gmail.com" class="pill">
+                    <i class="fa-solid fa-envelope"></i> shakilahamed21258@gmail.com
+                </a>
+                <span class="pill">
+                    <i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Profile Section -->
+        <section>
+            <div class="card">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-user"></i> Profile Summary
+                </h2>
+                <p class="profile-text">
+                    Recent Education graduate from the University of Dhaka with a strong academic record across secondary, higher secondary, and honors levels. Proficient in MS Office applications, with a keen interest in pursuing a career in public sector auditing and accounts.
+                </p>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section>
+            <div class="card">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-graduation-cap"></i> Academic Background
+                </h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-title">Honors (B.Ed.) in Education</div>
+                        <div class="timeline-subtitle">University of Dhaka • 2024</div>
+                        <span class="timeline-badge">CGPA 3.59 / 4.00</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Higher Secondary Certificate (H.S.C)</div>
+                        <div class="timeline-subtitle">Jashore Board • Humanities • 2020</div>
+                        <span class="timeline-badge">GPA 4.42 / 5.00</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">Secondary School Certificate (S.S.C)</div>
+                        <div class="timeline-subtitle">Jashore Board • Science • 2018</div>
+                        <span class="timeline-badge">GPA 4.39 / 5.00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section>
+            <div class="card">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-gears"></i> Skills & Expertise
+                </h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4><i class="fa-solid fa-desktop"></i> Software & Tools</h4>
+                        <ul>
+                            <li>MS Word</li>
+                            <li>MS Excel</li>
+                            <li>MS PowerPoint</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4><i class="fa-solid fa-book-open"></i> Academic Foundation</h4>
+                        <ul>
+                            <li>Education Studies</li>
+                            <li>Humanities</li>
+                            <li>Science Background</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4><i class="fa-solid fa-language"></i> Language Proficiency</h4>
+                        <ul>
+                            <li>Bengali (Native)</li>
+                            <li>English (Fluent)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Details & Address -->
+        <section>
+            <div class="card">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-address-card"></i> Personal Information & Address
+                </h2>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">Father's Name</span>
+                        <span class="detail-value">Sultan Mia</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Mother's Name</span>
+                        <span class="detail-value">Chameli Begum</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Date of Birth</span>
+                        <span class="detail-value">21 February 2002</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Nationality & Religion</span>
+                        <span class="detail-value">Bangladeshi | Islam</span>
+                    </div>
+                    <div class="detail-item" style="grid-column: span 1 / -1;">
+                        <span class="detail-label">Present Address</span>
+                        <span class="detail-value">C/O Sultan Mia, Muktijoddha Ziaur Rahman Hall, Room: 414, University of Dhaka, Shahbag, Dhaka - 1000</span>
+                    </div>
+                    <div class="detail-item" style="grid-column: span 1 / -1;">
+                        <span class="detail-label">Permanent Address</span>
+                        <span class="detail-value">C/O Sultan Mia, Village: Sutolia, Hatgopalpur, Jhenaidaha Sadar, Jhenaidah - 7300</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Shakil Ahamed. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
